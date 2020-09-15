@@ -1,0 +1,232 @@
+:root {
+  --vermelho: #e50914;
+  --preto: #141414;
+  --color-link: #aaa;
+  --white: #fff;
+  --filme-color: #da3951;
+  --documentario-color: #40c8f9;
+  --serie-color: #40f984;
+  --amarelo-favorito: #e6df0d;
+
+  --censura-livre: #17e613;
+  --censura-10: #2a76e8;
+  --censura-12: #dfea0e;
+  --censura-14: #d75b19;
+  --censura-16: #e13333;
+  --censura-18: #282828;
+
+  --padding-poster-horizontal: 16px;
+  --padding-poster-vertical: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--preto);
+  color: white;
+  font-family: 'Arial', Times, serif
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+/* Elementos base */
+
+.container {
+  margin: 0 32px;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo {
+  color: var(--vermelho);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+header nav a {
+  color: var(--color-link);
+}
+
+header nav a.filmes {
+  color: var(--filme-color);
+}
+
+header nav a.documentarios {
+  color: var(--documentario-color);
+}
+
+header nav a.series {
+  color: var(--serie-color);
+}
+
+header nav a + a {
+  margin-left: 10px;
+}
+
+header nav a:hover {
+  color: var(--white);
+}
+
+
+/* Filme Principal */
+.filme-principal {
+  font-size: 16px;
+  
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5) 100%), 
+              url('../img//snk-capa.jpg');
+
+  background-position: bottom;
+  background-size: cover;
+
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
+.filme-principal .titulo {
+  margin-top: 5%;
+  margin-bottom: 10px;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.filme-principal .descricao {
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.botao {
+  background-color: rgb(0, 0, 0, 0.5);
+  padding: 16px 32px;
+  font-size: 12px;
+  transition: 0.3s ease all;
+}
+
+.botao:hover {
+  background-color: var(--white);
+  color: var(--preto);
+}
+
+.botao + .botao {
+  margin-left: 16px;
+  margin-top: 16px;
+}
+
+.botao i {
+  margin-right: 4px;
+}
+
+.filme-principal .container {
+  width: 60%;
+  max-width: 800px;
+}
+
+.box-filme {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.carrosel-filmes {
+  margin-top: 16px;
+  margin-left: 32px;
+}
+
+/* Informações extras do poster */
+
+.carrosel-filmes .item {
+  position: relative;
+}
+
+.carrosel-filmes .item {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carrosel-filmes .item .extra {
+  position: absolute;
+}
+
+.carrosel-filmes .item .top-10 {
+  background-color: var(--vermelho);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px;
+  color: white;
+  top: 0;
+  right: 0;
+}
+
+.top-10 strong {
+  font-size: 20px;
+}
+
+.carrosel-filmes .item .novos-episodios {
+  padding: 8px;
+  background-color: var(--vermelho);
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
+  bottom: var(--padding-poster-vertical);
+  left: var(--padding-poster-horizontal);
+}
+
+.carrosel-filmes h2.titulo-grupo-lista {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.carrosel-filmes .item .censura {
+  bottom: var(--padding-poster-vertical);
+  right: var(--padding-poster-horizontal);
+  color: white;
+  padding: 8px;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.censura.idade-livre {
+  background-color: var(--censura-livre);
+}
+.censura.idade-10 {
+  background-color: var(--censura-10);
+}
+.censura.idade-12 {
+  color: black;
+  background-color: var(--censura-12);
+}
+.censura.idade-14 {
+  background-color: var(--censura-14);
+}
+.censura.idade-16 {
+  background-color: var(--censura-16);
+}
+.censura.idade-18 {
+  background-color: var(--censura-18);
+}
